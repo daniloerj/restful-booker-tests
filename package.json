@@ -1,0 +1,17 @@
+{
+  "name": "restful-booker-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "assert": "^2.1.0",
+    "supertest": "^7.1.1"
+  }
+}
