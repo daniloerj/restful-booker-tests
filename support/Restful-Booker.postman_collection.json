@@ -1,0 +1,138 @@
+{
+  "info": {
+    "name": "Restful-Booker API",
+    "_postman_id": "b1e8e7c7-1234-4e7a-9c1a-abcdef123456",
+    "description": "Colección para pruebas manuales de la API Restful-Booker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/ping",
+          "host": ["{{baseUrl}}"],
+          "path": ["ping"]
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Get All IDs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/booking",
+          "host": ["{{baseUrl}}"],
+          "path": ["booking"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstname\": \"John\",\n  \"lastname\": \"Doe\",\n  \"totalprice\": 123,\n  \"depositpaid\": true,\n  \"bookingdates\": {\n    \"checkin\": \"2024-06-01\",\n    \"checkout\": \"2024-06-10\"\n  },\n  \"additionalneeds\": \"Breakfast\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/booking",
+          "host": ["{{baseUrl}}"],
+          "path": ["booking"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Get by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/booking/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["booking", ":id"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Update (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Cookie", "value": "token={{token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstname\": \"Jane\",\n  \"lastname\": \"Doe\",\n  \"totalprice\": 150,\n  \"depositpaid\": false,\n  \"bookingdates\": {\n    \"checkin\": \"2024-07-01\",\n    \"checkout\": \"2024-07-10\"\n  },\n  \"additionalneeds\": \"Lunch\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/booking/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["booking", ":id"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Partial Update (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Cookie", "value": "token={{token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstname\": \"Patched\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/booking/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["booking", ":id"]
+        }
+      }
+    },
+    {
+      "name": "Booking - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Cookie", "value": "token={{token}}" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/booking/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["booking", ":id"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "https://restful-booker.herokuapp.com" },
+    { "key": "token", "value": "" }
+  ]
+}

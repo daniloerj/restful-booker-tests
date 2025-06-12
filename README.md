@@ -100,6 +100,25 @@ restful-booker-tests/
 
 ---
 
+---
+
+## 🧪 Pruebas manuales con Postman
+
+Puedes encontrar una colección de Postman lista para usar en:
+
+```
+support/Restful-Booker.postman_collection.json
+```
+
+### ¿Cómo usarla?
+
+1. Abre Postman y selecciona **Importar**.
+2. Elige el archivo `support/Restful-Booker.postman_collection.json`.
+3. Utiliza la variable `baseUrl` para cambiar de ambiente fácilmente.
+4. Realiza pruebas manuales a todos los endpoints principales de la API.
+
+---
+
 ## 📚 Recursos útiles
 
 - [Documentación oficial Restful-Booker](https://restful-booker.herokuapp.com/apidoc/index.html)
