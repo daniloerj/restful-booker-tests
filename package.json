@@ -6,7 +6,7 @@
     "test:dev": "cross-env TEST_ENV=dev npm test",
     "test:qa": "cross-env TEST_ENV=qa npm test",
     "test:prod": "cross-env TEST_ENV=prod npm test",
-    "test": "cucumber-js --require-module ts-node/register --require features/**/*.ts --format json:reports/cucumber_report.json",
+    "test": "cucumber-js --require-module ts-node/register --require features/step_definitions/**/*.ts --format json:reports/cucumber_report.json",
     "report": "ts-node generate-report.ts"
   },
   "keywords": [],
