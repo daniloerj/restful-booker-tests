@@ -44,6 +44,20 @@ Puedes ajustar la cantidad de usuarios virtuales y duración editando el archivo
 
 ---
 
+## 🚦 Ejecución desde GitHub Actions
+
+Además de ejecutar las pruebas localmente, puedes correrlas directamente desde GitHub:
+
+1. Ve a la pestaña **Actions** del repositorio en GitHub.
+2. Selecciona el workflow **API Tests**.
+3. Haz clic en el botón **Run workflow** (ubicado arriba a la derecha).
+4. Espera a que finalice la ejecución. Puedes ver los logs en tiempo real.
+5. Al finalizar, podrás descargar los reportes generados (HTML y/o JSON) como artefactos desde la misma página.
+
+Esto te permite validar los tests y la performance del proyecto sin necesidad de ejecutar nada en tu máquina local.
+
+---
+
 ## 🏗️ Integración Continua (CI)
 
 El proyecto incluye un workflow de GitHub Actions que:

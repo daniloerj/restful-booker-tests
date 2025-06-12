@@ -1,6 +1,7 @@
 name: API Tests
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
@@ -31,12 +32,11 @@ jobs:
       - name: Run k6 stress test
         run: k6 run stress/api-stress.k6.js
 
-      # Si generas un reporte JSON de k6, súbelo como artefacto
-      # - name: Upload k6 JSON report
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: k6-report
-      #     path: stress/k6-report.json
+      - name: Upload k6 JSON report
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-report
+          path: stress/k6-report.json
 
       - name: Generate HTML report
         run: npm run report
